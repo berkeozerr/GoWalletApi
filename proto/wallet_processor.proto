@@ -1,0 +1,49 @@
+syntax = "proto3";
+package berkeozerr.GoWallet;
+import "google/api/annotations.proto";
+option go_package = "./;pb";
+
+message RandomMnemonicRequest{
+    string mnemonic =1;
+}
+message RandomMnemonicResponse{
+    string mnemonic =1;
+}
+message GenerateHDSegWitAddressRequest{
+    string seedPhrase = 1;
+    string path = 2;
+}
+
+message GenerateHDSegWitAddressResponse{
+    string generatedAddress = 1;
+}
+
+message GenerateMultiSigP2SHAddressRequest{
+    int32 n = 1;
+    int32 m = 2;
+    repeated string publicKeys = 3;
+}
+message GenerateMultiSigP2SHAddressResponse{
+    string generatedAddress = 1;
+}
+
+service RandomMnemonicGenerator{
+    rpc GenerateRandomMnemonic(RandomMnemonicRequest) returns(RandomMnemonicResponse){
+        option (google.api.http) = {
+                get: "/v1/wallet/random_mnemonic"
+                  
+    };
+}
+    rpc GenerateHDSegWitAddress(GenerateHDSegWitAddressRequest) returns(GenerateHDSegWitAddressResponse){
+        option (google.api.http) = {
+                  post: "/v1/wallet/generate_hd_seg_with"
+                  body: "*"
+    };
+}
+    rpc GenerateMultiSigP2SHAddress(GenerateMultiSigP2SHAddressRequest) returns(GenerateMultiSigP2SHAddressResponse){
+        option (google.api.http) = {
+            post: "/v1/wallet/generate_multi_sig_p2sh"
+            body: "*"
+    };
+}
+}

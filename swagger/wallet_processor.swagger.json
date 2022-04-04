@@ -1,0 +1,197 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "wallet_processor.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "RandomMnemonicGenerator"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/v1/wallet/generate_hd_seg_with": {
+      "post": {
+        "operationId": "RandomMnemonicGenerator_GenerateHDSegWitAddress",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/GoWalletGenerateHDSegWitAddressResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GoWalletGenerateHDSegWitAddressRequest"
+            }
+          }
+        ],
+        "tags": [
+          "RandomMnemonicGenerator"
+        ]
+      }
+    },
+    "/v1/wallet/generate_multi_sig_p2sh": {
+      "post": {
+        "operationId": "RandomMnemonicGenerator_GenerateMultiSigP2SHAddress",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/GoWalletGenerateMultiSigP2SHAddressResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GoWalletGenerateMultiSigP2SHAddressRequest"
+            }
+          }
+        ],
+        "tags": [
+          "RandomMnemonicGenerator"
+        ]
+      }
+    },
+    "/v1/wallet/random_mnemonic": {
+      "get": {
+        "operationId": "RandomMnemonicGenerator_GenerateRandomMnemonic",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/GoWalletRandomMnemonicResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "mnemonic",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "RandomMnemonicGenerator"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "GoWalletGenerateHDSegWitAddressRequest": {
+      "type": "object",
+      "properties": {
+        "seedPhrase": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        }
+      }
+    },
+    "GoWalletGenerateHDSegWitAddressResponse": {
+      "type": "object",
+      "properties": {
+        "generatedAddress": {
+          "type": "string"
+        }
+      }
+    },
+    "GoWalletGenerateMultiSigP2SHAddressRequest": {
+      "type": "object",
+      "properties": {
+        "n": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "m": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "publicKeys": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "GoWalletGenerateMultiSigP2SHAddressResponse": {
+      "type": "object",
+      "properties": {
+        "generatedAddress": {
+          "type": "string"
+        }
+      }
+    },
+    "GoWalletRandomMnemonicResponse": {
+      "type": "object",
+      "properties": {
+        "mnemonic": {
+          "type": "string"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    }
+  }
+}
