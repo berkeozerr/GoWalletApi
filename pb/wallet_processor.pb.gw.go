@@ -32,17 +32,17 @@ var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
 var (
-	filter_RandomMnemonicGenerator_GenerateRandomMnemonic_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
+	filter_BitcoinWalletService_GenerateRandomMnemonic_0 = &utilities.DoubleArray{Encoding: map[string]int{}, Base: []int(nil), Check: []int(nil)}
 )
 
-func request_RandomMnemonicGenerator_GenerateRandomMnemonic_0(ctx context.Context, marshaler runtime.Marshaler, client RandomMnemonicGeneratorClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_BitcoinWalletService_GenerateRandomMnemonic_0(ctx context.Context, marshaler runtime.Marshaler, client BitcoinWalletServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq RandomMnemonicRequest
 	var metadata runtime.ServerMetadata
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_RandomMnemonicGenerator_GenerateRandomMnemonic_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_BitcoinWalletService_GenerateRandomMnemonic_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -51,14 +51,14 @@ func request_RandomMnemonicGenerator_GenerateRandomMnemonic_0(ctx context.Contex
 
 }
 
-func local_request_RandomMnemonicGenerator_GenerateRandomMnemonic_0(ctx context.Context, marshaler runtime.Marshaler, server RandomMnemonicGeneratorServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_BitcoinWalletService_GenerateRandomMnemonic_0(ctx context.Context, marshaler runtime.Marshaler, server BitcoinWalletServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq RandomMnemonicRequest
 	var metadata runtime.ServerMetadata
 
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_RandomMnemonicGenerator_GenerateRandomMnemonic_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_BitcoinWalletService_GenerateRandomMnemonic_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
@@ -67,7 +67,7 @@ func local_request_RandomMnemonicGenerator_GenerateRandomMnemonic_0(ctx context.
 
 }
 
-func request_RandomMnemonicGenerator_GenerateHDSegWitAddress_0(ctx context.Context, marshaler runtime.Marshaler, client RandomMnemonicGeneratorClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_BitcoinWalletService_GenerateHDSegWitAddress_0(ctx context.Context, marshaler runtime.Marshaler, client BitcoinWalletServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GenerateHDSegWitAddressRequest
 	var metadata runtime.ServerMetadata
 
@@ -84,7 +84,7 @@ func request_RandomMnemonicGenerator_GenerateHDSegWitAddress_0(ctx context.Conte
 
 }
 
-func local_request_RandomMnemonicGenerator_GenerateHDSegWitAddress_0(ctx context.Context, marshaler runtime.Marshaler, server RandomMnemonicGeneratorServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_BitcoinWalletService_GenerateHDSegWitAddress_0(ctx context.Context, marshaler runtime.Marshaler, server BitcoinWalletServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GenerateHDSegWitAddressRequest
 	var metadata runtime.ServerMetadata
 
@@ -101,7 +101,7 @@ func local_request_RandomMnemonicGenerator_GenerateHDSegWitAddress_0(ctx context
 
 }
 
-func request_RandomMnemonicGenerator_GenerateMultiSigP2SHAddress_0(ctx context.Context, marshaler runtime.Marshaler, client RandomMnemonicGeneratorClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_BitcoinWalletService_GenerateMultiSigP2SHAddress_0(ctx context.Context, marshaler runtime.Marshaler, client BitcoinWalletServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GenerateMultiSigP2SHAddressRequest
 	var metadata runtime.ServerMetadata
 
@@ -118,7 +118,7 @@ func request_RandomMnemonicGenerator_GenerateMultiSigP2SHAddress_0(ctx context.C
 
 }
 
-func local_request_RandomMnemonicGenerator_GenerateMultiSigP2SHAddress_0(ctx context.Context, marshaler runtime.Marshaler, server RandomMnemonicGeneratorServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_BitcoinWalletService_GenerateMultiSigP2SHAddress_0(ctx context.Context, marshaler runtime.Marshaler, server BitcoinWalletServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var protoReq GenerateMultiSigP2SHAddressRequest
 	var metadata runtime.ServerMetadata
 
@@ -135,24 +135,24 @@ func local_request_RandomMnemonicGenerator_GenerateMultiSigP2SHAddress_0(ctx con
 
 }
 
-// RegisterRandomMnemonicGeneratorHandlerServer registers the http handlers for service RandomMnemonicGenerator to "mux".
-// UnaryRPC     :call RandomMnemonicGeneratorServer directly.
+// RegisterBitcoinWalletServiceHandlerServer registers the http handlers for service BitcoinWalletService to "mux".
+// UnaryRPC     :call BitcoinWalletServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
-// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterRandomMnemonicGeneratorHandlerFromEndpoint instead.
-func RegisterRandomMnemonicGeneratorHandlerServer(ctx context.Context, mux *runtime.ServeMux, server RandomMnemonicGeneratorServer) error {
+// Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterBitcoinWalletServiceHandlerFromEndpoint instead.
+func RegisterBitcoinWalletServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server BitcoinWalletServiceServer) error {
 
-	mux.Handle("GET", pattern_RandomMnemonicGenerator_GenerateRandomMnemonic_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_BitcoinWalletService_GenerateRandomMnemonic_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/berkeozerr.GoWallet.RandomMnemonicGenerator/GenerateRandomMnemonic", runtime.WithHTTPPathPattern("/v1/wallet/random_mnemonic"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/berkeozerr.GoWallet.BitcoinWalletService/GenerateRandomMnemonic", runtime.WithHTTPPathPattern("/v1/wallet/random_mnemonic"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_RandomMnemonicGenerator_GenerateRandomMnemonic_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_BitcoinWalletService_GenerateRandomMnemonic_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -160,22 +160,22 @@ func RegisterRandomMnemonicGeneratorHandlerServer(ctx context.Context, mux *runt
 			return
 		}
 
-		forward_RandomMnemonicGenerator_GenerateRandomMnemonic_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_BitcoinWalletService_GenerateRandomMnemonic_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_RandomMnemonicGenerator_GenerateHDSegWitAddress_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_BitcoinWalletService_GenerateHDSegWitAddress_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/berkeozerr.GoWallet.RandomMnemonicGenerator/GenerateHDSegWitAddress", runtime.WithHTTPPathPattern("/v1/wallet/generate_hd_seg_with"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/berkeozerr.GoWallet.BitcoinWalletService/GenerateHDSegWitAddress", runtime.WithHTTPPathPattern("/v1/wallet/generate_hd_seg_with"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_RandomMnemonicGenerator_GenerateHDSegWitAddress_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_BitcoinWalletService_GenerateHDSegWitAddress_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -183,22 +183,22 @@ func RegisterRandomMnemonicGeneratorHandlerServer(ctx context.Context, mux *runt
 			return
 		}
 
-		forward_RandomMnemonicGenerator_GenerateHDSegWitAddress_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_BitcoinWalletService_GenerateHDSegWitAddress_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_RandomMnemonicGenerator_GenerateMultiSigP2SHAddress_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_BitcoinWalletService_GenerateMultiSigP2SHAddress_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/berkeozerr.GoWallet.RandomMnemonicGenerator/GenerateMultiSigP2SHAddress", runtime.WithHTTPPathPattern("/v1/wallet/generate_multi_sig_p2sh"))
+		rctx, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/berkeozerr.GoWallet.BitcoinWalletService/GenerateMultiSigP2SHAddress", runtime.WithHTTPPathPattern("/v1/wallet/generate_multi_sig_p2sh"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_RandomMnemonicGenerator_GenerateMultiSigP2SHAddress_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_BitcoinWalletService_GenerateMultiSigP2SHAddress_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -206,16 +206,16 @@ func RegisterRandomMnemonicGeneratorHandlerServer(ctx context.Context, mux *runt
 			return
 		}
 
-		forward_RandomMnemonicGenerator_GenerateMultiSigP2SHAddress_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_BitcoinWalletService_GenerateMultiSigP2SHAddress_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
 	return nil
 }
 
-// RegisterRandomMnemonicGeneratorHandlerFromEndpoint is same as RegisterRandomMnemonicGeneratorHandler but
+// RegisterBitcoinWalletServiceHandlerFromEndpoint is same as RegisterBitcoinWalletServiceHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
-func RegisterRandomMnemonicGeneratorHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
+func RegisterBitcoinWalletServiceHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
 	conn, err := grpc.Dial(endpoint, opts...)
 	if err != nil {
 		return err
@@ -235,79 +235,79 @@ func RegisterRandomMnemonicGeneratorHandlerFromEndpoint(ctx context.Context, mux
 		}()
 	}()
 
-	return RegisterRandomMnemonicGeneratorHandler(ctx, mux, conn)
+	return RegisterBitcoinWalletServiceHandler(ctx, mux, conn)
 }
 
-// RegisterRandomMnemonicGeneratorHandler registers the http handlers for service RandomMnemonicGenerator to "mux".
+// RegisterBitcoinWalletServiceHandler registers the http handlers for service BitcoinWalletService to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
-func RegisterRandomMnemonicGeneratorHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterRandomMnemonicGeneratorHandlerClient(ctx, mux, NewRandomMnemonicGeneratorClient(conn))
+func RegisterBitcoinWalletServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
+	return RegisterBitcoinWalletServiceHandlerClient(ctx, mux, NewBitcoinWalletServiceClient(conn))
 }
 
-// RegisterRandomMnemonicGeneratorHandlerClient registers the http handlers for service RandomMnemonicGenerator
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "RandomMnemonicGeneratorClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "RandomMnemonicGeneratorClient"
+// RegisterBitcoinWalletServiceHandlerClient registers the http handlers for service BitcoinWalletService
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "BitcoinWalletServiceClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "BitcoinWalletServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "RandomMnemonicGeneratorClient" to call the correct interceptors.
-func RegisterRandomMnemonicGeneratorHandlerClient(ctx context.Context, mux *runtime.ServeMux, client RandomMnemonicGeneratorClient) error {
+// "BitcoinWalletServiceClient" to call the correct interceptors.
+func RegisterBitcoinWalletServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client BitcoinWalletServiceClient) error {
 
-	mux.Handle("GET", pattern_RandomMnemonicGenerator_GenerateRandomMnemonic_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_BitcoinWalletService_GenerateRandomMnemonic_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/berkeozerr.GoWallet.RandomMnemonicGenerator/GenerateRandomMnemonic", runtime.WithHTTPPathPattern("/v1/wallet/random_mnemonic"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/berkeozerr.GoWallet.BitcoinWalletService/GenerateRandomMnemonic", runtime.WithHTTPPathPattern("/v1/wallet/random_mnemonic"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_RandomMnemonicGenerator_GenerateRandomMnemonic_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_BitcoinWalletService_GenerateRandomMnemonic_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_RandomMnemonicGenerator_GenerateRandomMnemonic_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_BitcoinWalletService_GenerateRandomMnemonic_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_RandomMnemonicGenerator_GenerateHDSegWitAddress_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_BitcoinWalletService_GenerateHDSegWitAddress_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/berkeozerr.GoWallet.RandomMnemonicGenerator/GenerateHDSegWitAddress", runtime.WithHTTPPathPattern("/v1/wallet/generate_hd_seg_with"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/berkeozerr.GoWallet.BitcoinWalletService/GenerateHDSegWitAddress", runtime.WithHTTPPathPattern("/v1/wallet/generate_hd_seg_with"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_RandomMnemonicGenerator_GenerateHDSegWitAddress_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_BitcoinWalletService_GenerateHDSegWitAddress_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_RandomMnemonicGenerator_GenerateHDSegWitAddress_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_BitcoinWalletService_GenerateHDSegWitAddress_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("POST", pattern_RandomMnemonicGenerator_GenerateMultiSigP2SHAddress_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("POST", pattern_BitcoinWalletService_GenerateMultiSigP2SHAddress_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/berkeozerr.GoWallet.RandomMnemonicGenerator/GenerateMultiSigP2SHAddress", runtime.WithHTTPPathPattern("/v1/wallet/generate_multi_sig_p2sh"))
+		rctx, err := runtime.AnnotateContext(ctx, mux, req, "/berkeozerr.GoWallet.BitcoinWalletService/GenerateMultiSigP2SHAddress", runtime.WithHTTPPathPattern("/v1/wallet/generate_multi_sig_p2sh"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_RandomMnemonicGenerator_GenerateMultiSigP2SHAddress_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_BitcoinWalletService_GenerateMultiSigP2SHAddress_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_RandomMnemonicGenerator_GenerateMultiSigP2SHAddress_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_BitcoinWalletService_GenerateMultiSigP2SHAddress_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -315,17 +315,17 @@ func RegisterRandomMnemonicGeneratorHandlerClient(ctx context.Context, mux *runt
 }
 
 var (
-	pattern_RandomMnemonicGenerator_GenerateRandomMnemonic_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "wallet", "random_mnemonic"}, ""))
+	pattern_BitcoinWalletService_GenerateRandomMnemonic_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "wallet", "random_mnemonic"}, ""))
 
-	pattern_RandomMnemonicGenerator_GenerateHDSegWitAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "wallet", "generate_hd_seg_with"}, ""))
+	pattern_BitcoinWalletService_GenerateHDSegWitAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "wallet", "generate_hd_seg_with"}, ""))
 
-	pattern_RandomMnemonicGenerator_GenerateMultiSigP2SHAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "wallet", "generate_multi_sig_p2sh"}, ""))
+	pattern_BitcoinWalletService_GenerateMultiSigP2SHAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "wallet", "generate_multi_sig_p2sh"}, ""))
 )
 
 var (
-	forward_RandomMnemonicGenerator_GenerateRandomMnemonic_0 = runtime.ForwardResponseMessage
+	forward_BitcoinWalletService_GenerateRandomMnemonic_0 = runtime.ForwardResponseMessage
 
-	forward_RandomMnemonicGenerator_GenerateHDSegWitAddress_0 = runtime.ForwardResponseMessage
+	forward_BitcoinWalletService_GenerateHDSegWitAddress_0 = runtime.ForwardResponseMessage
 
-	forward_RandomMnemonicGenerator_GenerateMultiSigP2SHAddress_0 = runtime.ForwardResponseMessage
+	forward_BitcoinWalletService_GenerateMultiSigP2SHAddress_0 = runtime.ForwardResponseMessage
 )

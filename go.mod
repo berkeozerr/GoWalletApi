@@ -25,7 +25,14 @@ require (
 	github.com/decred/dcrd/dcrec/secp256k1/v4 v4.0.1 // indirect
 	github.com/keyfuse/tokucore v0.0.0-20190908151025-d2b8996b1e56 // indirect
 	github.com/prettymuchbryce/hellobitcoin v0.0.0-20170322155636-a32469c515ed // indirect
+	github.com/stretchr/testify v1.7.1
 	github.com/toxeus/go-secp256k1 v0.0.0-20180117210953-77e56d25bcd6 // indirect
 	github.com/tyler-smith/go-bip32 v1.0.0 // indirect
 	golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9 // indirect
+)
+
+require (
+	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/pmezard/go-difflib v1.0.0 // indirect
+	gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c // indirect
 )

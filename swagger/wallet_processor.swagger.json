@@ -6,7 +6,7 @@
   },
   "tags": [
     {
-      "name": "RandomMnemonicGenerator"
+      "name": "BitcoinWalletService"
     }
   ],
   "consumes": [
@@ -18,7 +18,7 @@
   "paths": {
     "/v1/wallet/generate_hd_seg_with": {
       "post": {
-        "operationId": "RandomMnemonicGenerator_GenerateHDSegWitAddress",
+        "operationId": "BitcoinWalletService_GenerateHDSegWitAddress",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -44,13 +44,13 @@
           }
         ],
         "tags": [
-          "RandomMnemonicGenerator"
+          "BitcoinWalletService"
         ]
       }
     },
     "/v1/wallet/generate_multi_sig_p2sh": {
       "post": {
-        "operationId": "RandomMnemonicGenerator_GenerateMultiSigP2SHAddress",
+        "operationId": "BitcoinWalletService_GenerateMultiSigP2SHAddress",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -76,13 +76,13 @@
           }
         ],
         "tags": [
-          "RandomMnemonicGenerator"
+          "BitcoinWalletService"
         ]
       }
     },
     "/v1/wallet/random_mnemonic": {
       "get": {
-        "operationId": "RandomMnemonicGenerator_GenerateRandomMnemonic",
+        "operationId": "BitcoinWalletService_GenerateRandomMnemonic",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -106,7 +106,7 @@
           }
         ],
         "tags": [
-          "RandomMnemonicGenerator"
+          "BitcoinWalletService"
         ]
       }
     }
@@ -115,7 +115,7 @@
     "GoWalletGenerateHDSegWitAddressRequest": {
       "type": "object",
       "properties": {
-        "seedPhrase": {
+        "seed": {
           "type": "string"
         },
         "path": {

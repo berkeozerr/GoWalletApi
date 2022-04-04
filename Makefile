@@ -1,16 +1,6 @@
 gen:
-	protoc --proto_path=proto proto/*.proto  --go_out=:pb --go-grpc_out=:pb 
+	cd proto; buf generate
 	
-gen2:
-	protoc --proto_path=proto proto/*.proto  --go_out=pb/ 
-	protoc --proto_path=proto proto/*.proto  --go-grpc_out=pb/
-	protoc --proto_path=proto proto/*.proto   --openapiv2_out=swagger/
-	protoc -I . --grpc-gateway_out ./pb/  \
-    --grpc-gateway_opt logtostderr=true \
-    --grpc-gateway_opt paths=source_relative \
-    --grpc-gateway_opt generate_unbound_methods=true \
-    proto/wallet_processor.proto 
-
 cert:
 	cd cert; ./gen.sh; cd ..    
 
@@ -26,4 +16,4 @@ test:
 rest:
 	go run cmd/server/main.go -port 8081 -type rest 
 
-.PHONY: clean gen server client test cert 
+.PHONY: clean gen server test cert 

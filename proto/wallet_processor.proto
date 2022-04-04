@@ -10,7 +10,7 @@ message RandomMnemonicResponse{
     string mnemonic =1;
 }
 message GenerateHDSegWitAddressRequest{
-    string seedPhrase = 1;
+    string seed = 1;
     string path = 2;
 }
 
@@ -27,7 +27,7 @@ message GenerateMultiSigP2SHAddressResponse{
     string generatedAddress = 1;
 }
 
-service RandomMnemonicGenerator{
+service BitcoinWalletService{
     rpc GenerateRandomMnemonic(RandomMnemonicRequest) returns(RandomMnemonicResponse){
         option (google.api.http) = {
                 get: "/v1/wallet/random_mnemonic"

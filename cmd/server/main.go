@@ -53,7 +53,7 @@ func loadTLSCredentials() (credentials.TransportCredentials, error) {
 	return credentials.NewTLS(config), nil
 }
 func runGRPCServer(
-	walletServer pb.RandomMnemonicGeneratorServer,
+	walletServer pb.BitcoinWalletServiceServer,
 	enableTLS bool,
 	listener net.Listener,
 ) error {
@@ -68,7 +68,7 @@ func runGRPCServer(
 
 	grpcServer := grpc.NewServer(serverOptions...)
 
-	pb.RegisterRandomMnemonicGeneratorServer(grpcServer, walletServer)
+	pb.RegisterBitcoinWalletServiceServer(grpcServer, walletServer)
 	reflection.Register(grpcServer)
 
 	log.Printf("Start GRPC server at %s, TLS = %t", listener.Addr().String(), enableTLS)
@@ -76,7 +76,7 @@ func runGRPCServer(
 }
 
 func runRESTServer(
-	walletServer pb.RandomMnemonicGeneratorServer,
+	walletServer pb.BitcoinWalletServiceServer,
 	enableTLS bool,
 	listener net.Listener,
 ) error {
@@ -86,7 +86,7 @@ func runRESTServer(
 	defer cancel()
 
 	// in-process handler
-	err := pb.RegisterRandomMnemonicGeneratorHandlerServer(ctx, mux, walletServer)
+	err := pb.RegisterBitcoinWalletServiceHandlerServer(ctx, mux, walletServer)
 	if err != nil {
 		return err
 	}
