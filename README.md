@@ -63,6 +63,7 @@ go get github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2
 | Command     | Description | 
 | :---        | :----:   |  
 | make server | Run Server  | 
+| make rest  | Run Rest Server  |
 | make clean   | Cleans pb and swagger folder |
 | make gen  | Code generation from proto pb   |
 | make test  | Run Tests|
