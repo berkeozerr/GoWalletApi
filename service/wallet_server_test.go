@@ -21,17 +21,13 @@ func TestGenerateRandomMnemonic(t *testing.T) {
 func TestGenerateHDSegWitAddress(t *testing.T) {
 
 	req := &pb.GenerateHDSegWitAddressRequest{
-		Seed: "99b990d5fba9552d1a108c5702183049f9caef2655d55ff3d6dd45e157840983d6954e7f56de69e3f91905879bc601a73bd211d3936b28a137c027589434db2a",
-		Path: "m/84'/0'/0'/0",
+		Seed: "lizard century nut catch figure build swift call pledge toe cereal truck recipe faint clerk",
+		Path: "m/84'/0'/0'/0/0",
 	}
 	server := service.NewWalletServer()
-	res, err := server.GenerateHDSegWitAddress(context.Background(), req)
-	if err != nil {
-		require.Error(t, err, "Input must be valid hex string")
+	res, _ := server.GenerateHDSegWitAddress(context.Background(), req)
+	require.Equal(t, res.GeneratedAddress, "bc1q0j5dewvk89ss00l68a9hf8lah4c66wmahddmdv")
 
-	} else {
-		require.Equal(t, res.GeneratedAddress, "bc1q0j5dewvk89ss00l68a9hf8lah4c66wmahddmdv")
-	}
 }
 
 func TestGenerateMultiSigP2SHAddress(t *testing.T) {

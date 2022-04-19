@@ -44,10 +44,7 @@ func (server *BitcoinWalletServiceServer) GenerateRandomMnemonic(context.Context
 
 //Generating HDSegWitAddress function
 func (server *BitcoinWalletServiceServer) GenerateHDSegWitAddress(ctx context.Context, req *pb.GenerateHDSegWitAddressRequest) (*pb.GenerateHDSegWitAddressResponse, error) {
-	seed, err := hex.DecodeString("0x" + req.GetSeed())
-	if err != nil {
-		return nil, err
-	}
+	seed := []byte(bip39.NewSeed(req.GetSeed(), ""))
 	hdKey := bip32v2.NewHDKey(seed)
 	prvKey, err := hdKey.DeriveByPath(req.GetPath())
 	if err != nil {
